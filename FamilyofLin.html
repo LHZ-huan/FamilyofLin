@@ -48,35 +48,41 @@
 			'img/80.jpeg'
 			];
 			function preloadimages(arr){
-			    var newimages=[]
-			    var imgdex = 0;
-			    var dexnum = 100/arr.length;
-			    // var timeout =null;
-			    var arr=(typeof arr!="object")? [arr] : arr  //确保参数总是数组
-			    for (var i=0; i<arr.length; i++){
-			        // clearInterval(timeout);
-			        newimages[i]=new Image();
-			        newimages[i].src=arr[i];     
-			        imgdex++;
-//			        document.getElementById("numload").innerHTML = parseInt(dexnum*imgdex)+"%"; 
-			        // timeout = setInterval(function() {
-		        	// 	var html = document.getElementById("numload").innerHTML.split("%")[0];
-		        	// 	if((parseInt(html)+1)>dexnum*imgdex){
-		        	// 		return false;
-		        	// 	}
-		        	// 	document.getElementById("numload").innerHTML = (parseInt(html)+1)+"%";
-			        // },1)
+			   // var newimages=[]
+			   // var imgdex = 0;
+			   // var dexnum = 100/arr.length;
+			    var timeout =null;
+			    timeout = setTimeout(function() {
+				document.getElementById("loading").style.display="none";
+				document.getElementById("container").style.display="block";
+				document.getElementById("info").style.display="block";
+				document.getElementById("menu").style.display="block";
+		      	    },5000);
+			   // var arr=(typeof arr!="object")? [arr] : arr  //确保参数总是数组
+			    //for (var i=0; i<arr.length; i++){
+			    //    // clearInterval(timeout);
+			     //   newimages[i]=new Image();
+			     //   newimages[i].src=arr[i];     
+			     //   imgdex++;
+//			     //   document.getElementById("numload").innerHTML = parseInt(dexnum*imgdex)+"%"; 
+			    //    // timeout = setInterval(function() {
+		        	//// 	var html = document.getElementById("numload").innerHTML.split("%")[0];
+		        	//// 	if((parseInt(html)+1)>dexnum*imgdex){
+		        	//// 		return false;
+		        	//// 	}
+		        	//// 	document.getElementById("numload").innerHTML = (parseInt(html)+1)+"%";
+			      //  // },1)
 			        
-			        if (imgdex>=arr.length) {
-		        		document.getElementById("loading").style.display="none";
-		        		document.getElementById("container").style.display="block";
-		        		document.getElementById("info").style.display="block";
-		        		document.getElementById("menu").style.display="block";
-		        		break;
-			        }
-			    }
+			     //   if (imgdex>=arr.length) {
+		        	//	document.getElementById("loading").style.display="none";
+		        	//	document.getElementById("container").style.display="block";
+		        	//	document.getElementById("info").style.display="block";
+		        	//	document.getElementById("menu").style.display="block";
+		        	//	break;
+			      //  }
+			   // }
 			}
-			// preloadimages(imgArr);
+			preloadimages(imgArr);
 			var table = [
 				"1.jpeg", "Hydrogen", "1.00794", 1, 1,
 				"2.jpeg", "Helium", "4.002602", 2, 1,
